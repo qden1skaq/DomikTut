@@ -6,6 +6,8 @@
   @include adaptiveValue("padding-bottom", 30, 15);
   @include adaptiveValue("padding-left", 60, 20);
   @include adaptiveValue("padding-right", 60, 20);
+  position: relative;
+  z-index: 10;
 
   &__wrapp {
     display: flex;

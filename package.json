@@ -70,6 +70,8 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
+		"ion-rangeslider": "^2.3.1",
+		"jquery": "^3.7.1",
 		"simplebar": "latest"
 	}
 }
