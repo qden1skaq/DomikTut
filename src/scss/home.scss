@@ -346,9 +346,10 @@
     justify-content: space-between;
     @include adaptiveValue("gap", 40, 20);
     flex-wrap: wrap;
-    @media (max-width: em(625)){
-        flex-direction: column;
-        justify-content: center;
+
+    @media (max-width: em(625)) {
+      flex-direction: column;
+      justify-content: center;
     }
   }
 
@@ -358,10 +359,11 @@
     @include adaptiveValue("border-radius", 20, 10);
     box-shadow: 0px 4px 80px 0px rgba(5, 9, 22, 0.08);
     background-color: rgb(255, 255, 255);
-    @include adaptiveValue("height", 650, 450);
+    @include adaptiveValue("height", 650, 400);
     @include adaptiveValue("width", 440, 220);
-    @media (max-width: em(425)){
-        width: 100%;
+
+    @media (max-width: em(425)) {
+      width: 100%;
     }
   }
 
@@ -370,7 +372,7 @@
   &__images {
     position: relative;
     @include adaptiveValue("margin-bottom", 30, 15);
-    
+
   }
 
   /* .popular__people */
@@ -390,12 +392,13 @@
   /* .popular__img */
 
   &__img {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     @include adaptiveValue("width", 440, 220);
     @include adaptiveValue("height", 298, 149);
-    @media (max-width: em(425)){
-       width: 100%; 
+
+    @media (max-width: em(425)) {
+      width: 100%;
     }
   }
 
@@ -452,30 +455,121 @@
     @include adaptiveValue("padding-right", 30, 15);
     display: flex;
     align-items: center;
-    @include adaptiveValue("gap", 66, 33);
+    justify-content: space-between;
+    @include adaptiveValue("gap", 66, 10);
   }
 
   /* .popular__price */
 
   &__price {
     color: rgb(51, 51, 51);
-font-family: Raleway;
-@include adaptiveValue("font-size", 22, 16);
-font-weight: 800;
-line-height: 150%;
-letter-spacing: 0%;
-text-align: left;
+    font-family: Raleway;
+    @include adaptiveValue("font-size", 22, 14);
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: left;
   }
 
   /* .popular__link */
 
   &__link {
     color: rgb(244, 104, 63);
-font-family: Montserrat;
-@include adaptiveValue("font-size", 16, 14);
-font-weight: 600;
-line-height: 150%;
-letter-spacing: 0%;
-text-align: left;
+    font-family: Montserrat;
+    @include adaptiveValue("font-size", 16, 14);
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+}
+
+// ========================
+.for-you {
+
+  /* .for-you__container */
+  @include adaptiveValue("padding-top", 120, 60);
+  @include adaptiveValue("padding-bottom", 250, 125);
+  background-image: url('@img/for-you/bg-for-you.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &__container {}
+
+  /* .for-you__title */
+
+  &__title {
+    color: rgb(51, 51, 51);
+    font-family: Raleway;
+    @include adaptiveValue("font-size", 40, 20);
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: left;
+    @include adaptiveValue("margin-bottom", 80, 40);
+  }
+
+  /* .for-you__wrapp */
+
+  &__wrapp {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @include adaptiveValue("gap", 40, 20);
+    @include adaptiveValue("margin-bottom", 60, 30);
+    @media (max-width: em(1370)){
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    }
+    @media (max-width: em(530)){
+      grid-template-columns: repeat(1, 1fr); 
+    }
+  }
+
+  /* .for-you__item */
+
+  &__item {
+    display: flex;
+    align-items: center;
+    @include adaptiveValue("gap", 21, 10);
+    padding: 50px 44px;
+    @include adaptiveValue("width", 440, 220);
+    @include adaptiveValue("height", 130, 65);
+    @include adaptiveValue("border-radius", 20, 10);
+box-shadow: 0px 4px 80px 0px rgba(5, 9, 22, 0.08);
+background: rgb(255, 255, 255);
+@media (max-width: em(768)){
+    width: 100%;
+}
+  }
+
+  /* .for-you__img */
+
+  &__img {}
+
+  /* .for-you__text */
+
+  &__text {
+    color: rgb(51, 51, 51);
+    font-family: Montserrat;
+    @include adaptiveValue("font-size", 18, 14);
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+
+  /* .for-you__btn */
+
+  &__box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__btn {
+    padding: 10px 51px;
+    @include adaptiveValue("border-radius", 200, 100);
+    background: rgb(244, 104, 63);
   }
 }
