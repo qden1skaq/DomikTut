@@ -517,12 +517,14 @@
     grid-template-columns: repeat(3, 1fr);
     @include adaptiveValue("gap", 40, 20);
     @include adaptiveValue("margin-bottom", 60, 30);
-    @media (max-width: em(1370)){
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
+
+    @media (max-width: em(1370)) {
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
     }
-    @media (max-width: em(530)){
-      grid-template-columns: repeat(1, 1fr); 
+
+    @media (max-width: em(530)) {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 
@@ -536,11 +538,12 @@
     @include adaptiveValue("width", 440, 220);
     @include adaptiveValue("height", 130, 65);
     @include adaptiveValue("border-radius", 20, 10);
-box-shadow: 0px 4px 80px 0px rgba(5, 9, 22, 0.08);
-background: rgb(255, 255, 255);
-@media (max-width: em(768)){
-    width: 100%;
-}
+    box-shadow: 0px 4px 80px 0px rgba(5, 9, 22, 0.08);
+    background: rgb(255, 255, 255);
+
+    @media (max-width: em(768)) {
+      width: 100%;
+    }
   }
 
   /* .for-you__img */
@@ -561,7 +564,7 @@ background: rgb(255, 255, 255);
 
   /* .for-you__btn */
 
-  &__box{
+  &__box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -571,5 +574,100 @@ background: rgb(255, 255, 255);
     padding: 10px 51px;
     @include adaptiveValue("border-radius", 200, 100);
     background: rgb(244, 104, 63);
+  }
+}
+
+//==============================
+.questions {
+  @include adaptiveValue("padding-bottom", 200, 100);
+
+  &__main-title {
+    @include adaptiveValue("max-width", 531, 265);
+    @include adaptiveValue("font-size", 40, 20);
+    @include adaptiveValue("margin-bottom", 80, 48);
+    color: rgb(51, 51, 51);
+    font-family: Raleway;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+
+  &__list {
+    margin: 0 auto;
+  }
+
+  &__item {
+    @include adaptiveValue("margin-bottom", 20, 10);
+  }
+
+  &__title {
+    position: relative;
+    width: 100%;
+    @include adaptiveValue("padding-top", 20, 10);
+    @include adaptiveValue("padding-bottom", 20, 10);
+    @include adaptiveValue("padding-right", 30, 15);
+    text-align: left;
+    border: none;
+    @include adaptiveValue("font-size", 22, 12);
+    line-height: 21px;
+    color: rgb(51, 51, 51);
+    transition: all 0.3s;
+    border-top: 1px solid rgb(192, 194, 215);
+
+    &::after {
+      content: "";
+      position: absolute;
+      @include adaptiveValue("right", 20, 10);
+      @include adaptiveValue("bottom", 33, 16);
+      @include adaptiveValue("width", 17, 9);
+      @include adaptiveValue("height", 17, 9);
+      border: 2px solid;
+      border-color: transparent transparent rgb(51, 51, 51) transparent;
+      transition: border-color 0.5s ease-in-out, bottom 0.5s ease-in-out;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      @include adaptiveValue("right", 28, 13);
+      @include adaptiveValue("bottom", 26, 13);
+      @include adaptiveValue("width", 17, 9);
+      @include adaptiveValue("height", 17, 9);
+      border: 2px solid;
+      border-color: transparent rgb(51, 51, 51) transparent transparent;
+      transition: border-color 0.5s ease-in-out, bottom 0.5s ease-in-out;
+    }
+
+    &.active:after {
+      border-color: transparent transparent rgb(51, 51, 51) transparent;
+    }
+
+    &.active::before {
+      border-color: transparent transparent transparent transparent;
+    }
+
+  }
+
+  &__description {
+    margin-top: -2px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+
+    &.active {
+      height: auto;
+    }
+
+    p {
+      background: #fff;
+      @include adaptiveValue("padding-top", 20, 10);
+      @include adaptiveValue("padding-bottom", 20, 10);
+      @include adaptiveValue("padding-right", 30, 15);
+      font-weight: 400;
+      @include adaptiveValue("font-size", 18, 10);
+      line-height: 19px;
+      color: rgb(51, 51, 51);
+    }
   }
 }
